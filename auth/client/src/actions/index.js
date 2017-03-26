@@ -1,14 +1,18 @@
 
 
 export function signinUser({ email, password }) {
-  // Submit email/password to the server
+  //redux thunk gives us access to dispatch
+  return function(dispatch) {
 
-  // If request is good...
-  // - Update state to indicate user is authenticated
-  // - Save the JWT Token
-  // - redirect to the route '/feature'
+    // Submit email/password to the server
 
-  // If request is bad...
-  // - Show an error to the user
-  
+    // If request is good...
+    // - Update state to indicate user is authenticated
+    // - Save the JWT Token
+    // - redirect to the route '/feature'
+
+    // If request is bad...
+    // - Show an error to the user
+
+  }
 }
