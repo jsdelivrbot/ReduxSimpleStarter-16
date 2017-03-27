@@ -6,6 +6,7 @@ const ROOT_URL = 'http://localhost:3090';
 
 export function signinUser({ email, password }) {
   //redux thunk gives us access to dispatch
+  // thunk will call the returned function with dispatch
   // can dispatch action at anytime we want - doesn't have to happen immediately
 
   return function(dispatch) {
@@ -18,6 +19,7 @@ export function signinUser({ email, password }) {
         // - Update state to indicate user is authenticated
         dispatch({ type: AUTH_USER });
         // - Save the JWT Token
+        localStorage.setItem('token', response.data.token);
         // - redirect to the route '/feature'
         browserHistory.push('/feature');
       })
